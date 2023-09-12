@@ -118,8 +118,8 @@ let group = {
         existStudent.address = student.address == undefined ? existStudent.address : student.address;
     },
 
-    StudentSearch: function (id) {
-        let existStudent = this.students.find(m => m.id == id);
+    StudentSearch: function (name, surname) {
+        let existStudent = this.students.find(m => m.id == name, surname);
 
         if (existStudent == undefined) {
             alert("Student not found");
@@ -149,7 +149,7 @@ group.addStudent(stu4);
 
 
 
-console.log(group.StudentSearch(4));
+console.log(group.StudentSearch("Samir"));
 
 
 console.log(group.getStudentbyId(2));
@@ -194,7 +194,7 @@ function showAfterUpdate() {
     }
 }
 
- showBeforeUpdate();
+showBeforeUpdate();
 
 let updatedStu = {
     id: 4,
@@ -204,9 +204,9 @@ let updatedStu = {
     address: "New York"
 }
 
- group.updateStudent(updatedStu);
+group.updateStudent(updatedStu);
 
- showAfterUpdate();
+showAfterUpdate();
 
 
 //  class Person {
